@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiniERP - Autenticación</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>MiniERP</h1>
+      </header>
+
+      <main class="menu-principal">
+        <div class="auth-tabs">
+          <button id="btnLoginTab" class="tab active">Iniciar sesión</button>
+          <button id="btnRegistroTab" class="tab">Registrarse</button>
+        </div>
+
+        <!-- Formulario Login -->
+        <form id="formLogin" class="form-login auth-form">
+          <input
+            type="email"
+            id="loginEmail"
+            placeholder="Correo electrónico"
+            required
+          />
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Contraseña"
+            required
+          />
+          <button type="submit">Entrar</button>
+        </form>
+
+        <!-- Formulario Registro -->
+        <form id="formRegistro" class="form-login auth-form hidden">
+          <input
+            type="email"
+            id="registroEmail"
+            placeholder="Correo electrónico"
+            required
+          />
+          <input
+            type="password"
+            id="registroPassword"
+            placeholder="Contraseña"
+            required
+          />
+          <button type="submit">Registrarse</button>
+        </form>
+      </main>
+
+      <footer>
+        <p>Creado por Juan Antonio © 2025</p>
+      </footer>
+
+      <div id="mensaje"></div>
+    </div>
+
+    <script src="auth.js"></script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiniERP - Facturas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Facturas</h1>
+        <div class="usuario-header" id="usuarioInfo"></div>
+      </header>
+      <!-- Botón del menú hamburguesa -->
+      <div id="menuToggle" onclick="toggleMenu()">☰</div>
+
+      <!-- Menú lateral oculto -->
+      <nav id="sideMenu">
+        <a href="index.html">🏠 Inicio</a>
+        <a href="clientes.html">👥 Clientes</a>
+        <a href="productos.html">📦 Productos</a>
+        <a href="facturas.html">🧾 Facturas</a>
+        <a href="auth.html" onclick="localStorage.clear()">🚪 Cerrar sesión</a>
+      </nav>
+
+      <main class="menu-principal">
+        <!-- 🧾 Formulario para crear factura -->
+        <h2>Crear nueva factura</h2>
+
+        <form id="formFactura" class="form-login">
+          <select id="cbClientes" required></select>
+
+          <div class="grupo-producto">
+            <select id="cbProductos"></select>
+            <input type="number" id="cantidad" value="1" min="1" />
+            <button type="button" id="btnAgregarProducto">Agregar</button>
+          </div>
+
+          <h3>Productos en factura</h3>
+          <ul id="carrito"></ul>
+          <p id="totalFactura">Total: 0.00 €</p>
+
+          <button type="submit">Guardar factura</button>
+        </form>
+
+        <hr />
+
+        <!-- 📋 Listado de facturas -->
+        <h2>Listado de Facturas</h2>
+
+        <select id="filtroClientes">
+          <option value="0">🔍 Ver todas</option>
+        </select>
+
+        <ul id="listaFacturas"></ul>
+      </main>
+
+      <footer>
+        <p>Creado por Juan Antonio © 2025</p>
+      </footer>
+
+      <div id="mensaje"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="session.js"></script>
+    <script src="facturas.js"></script>
+  </body>
+</html>

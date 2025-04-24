@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiniERP - Productos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Gestión de Productos</h1>
+      <div class="usuario-header" id="usuarioInfo"></div>
+    </header>
+    <!-- Botón del menú hamburguesa -->
+    <div id="menuToggle" onclick="toggleMenu()">☰</div>
+
+    <!-- Menú lateral oculto -->
+    <nav id="sideMenu">
+      <a href="index.html">🏠 Inicio</a>
+      <a href="clientes.html">👥 Clientes</a>
+      <a href="productos.html">📦 Productos</a>
+      <a href="facturas.html">🧾 Facturas</a>
+      <a href="auth.html" onclick="localStorage.clear()">🚪 Cerrar sesión</a>
+    </nav>
+
+    <main>
+      <form id="formProducto">
+        <input
+          type="text"
+          id="nombreProducto"
+          placeholder="Nombre del producto"
+          required
+        />
+        <input
+          type="number"
+          id="precioProducto"
+          placeholder="Precio"
+          step="0.01"
+          min="0"
+          required
+        />
+        <button type="submit">Agregar Producto</button>
+      </form>
+
+      <h2>Listado de Productos</h2>
+      <ul id="listaProductos"></ul>
+    </main>
+
+    <footer>
+      <p>Creado por Juan Antonio © 2025</p>
+    </footer>
+
+    <div id="mensaje"></div>
+
+    <!-- Modal reutilizable si querés usarlo también para eliminar productos -->
+    <div id="modalConfirmacion" class="modal">
+      <div class="modal-contenido">
+        <p id="modalTexto">
+          ¿Estás seguro de que deseas eliminar este producto?
+        </p>
+        <div class="modal-botones">
+          <button id="btnCancelar">Cancelar</button>
+          <button id="btnConfirmar">Eliminar</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="productos.js"></script>
+    <script src="session.js"></script>
+  </body>
+</html>
