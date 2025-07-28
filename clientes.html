@@ -7,40 +7,44 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1>Gestión de CLientes</h1>
-      <div class="usuario-header" id="usuarioInfo"></div>
-    </header>
-    <!-- Botón del menú hamburguesa -->
-    <div id="menuToggle" onclick="toggleMenu()">☰</div>
+    <div class="wrapper">
+      <header>
+        <h1>Gestión de Clientes</h1>
+        <div class="usuario-header" id="usuarioInfo"></div>
+      </header>
 
-    <!-- Menú lateral oculto -->
-    <nav id="sideMenu">
-      <a href="index.html">🏠 Inicio</a>
-      <a href="clientes.html">👥 Clientes</a>
-      <a href="productos.html">📦 Productos</a>
-      <a href="facturas.html">🧾 Facturas</a>
-      <a href="auth.html" onclick="localStorage.clear()">🚪 Cerrar sesión</a>
-    </nav>
+      <!-- Botón del menú hamburguesa -->
+      <div id="menuToggle" onclick="toggleMenu()">☰</div>
 
-    <main>
-      <form id="formCliente">
-        <input type="text" id="nombre" placeholder="Nombre" required />
-        <input type="email" id="email" placeholder="Email" required />
-        <input type="text" id="telefono" placeholder="Teléfono" required />
-        <button type="submit">Agregar Cliente</button>
-      </form>
+      <!-- Menú lateral oculto -->
+      <nav id="sideMenu">
+        <a href="index.html">🏠 Inicio</a>
+        <a href="clientes.html">👥 Clientes</a>
+        <a href="productos.html">📦 Productos</a>
+        <a href="facturas.html">🧾 Facturas</a>
+        <a href="auth.html" onclick="localStorage.clear()">🚪 Cerrar sesión</a>
+      </nav>
 
-      <h2>Listado de Clientes</h2>
-      <ul id="listaClientes"></ul>
-    </main>
+      <main>
+        <form id="formCliente">
+          <input type="text" id="nombre" placeholder="Nombre" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="text" id="telefono" placeholder="Teléfono" required />
+          <button type="submit">Agregar Cliente</button>
+        </form>
 
-    <footer>
-      <p>Creado por Juan Antonio © 2025</p>
-    </footer>
+        <h2>Listado de Clientes</h2>
+        <ul id="listaClientes"></ul>
+      </main>
 
+      <footer>
+        <p>Creado por Juan Antonio © 2025</p>
+      </footer>
+    </div>
+
+    <!-- Elementos fuera del wrapper -->
     <div id="mensaje"></div>
-    <script src="clientes.js"></script>
+
     <div id="modalConfirmacion" class="modal">
       <div class="modal-contenido">
         <p id="modalTexto">
@@ -52,6 +56,9 @@
         </div>
       </div>
     </div>
+
+    <script src="clientes.js"></script>
     <script src="session.js"></script>
   </body>
 </html>
+
